@@ -1,0 +1,97 @@
+3<html>
+
+<head>
+   <title>BMI Calculator</title>
+
+   <script>
+
+      var BMI, total_height_in_inches, height_in_feet; //First var container
+
+      total_height_in_inches = (height_in_feet * 12) + height_in_inches;//Height calc
+
+      BMI = (weight_in_pounds / Math.pow(total_height_in_inches, 2)) * 703;//Equation
+
+      var result = Math.round(BMI);//Calculated result
+
+      //document.write("Your BMI is " + result);
+      document.write("<br><br>");
+
+      if (result <= 18.5) { document.write("You are underweight.");}
+
+      // If BMI is 18.5-24.9 user is normal weight
+      else if (result  == 18.5 || BMI <= 24.9) { document.write("You are a normal weight.");}
+
+      // If BMI is 25.0-29.9 user is overweight
+      else if (result  == 25.0 || BMI <= 29.9) { document.write("You are overweight.");}
+
+      // If BMI is 30 or above user is obese
+      else if (result  >= 30) { document.write("You are obese.");}
+
+   </script>
+
+   <style>
+      @import url(https://fonts.googleapis.com/css?family=Raleway:400,600);
+
+      html{
+      background-color:#8fa5c2;
+      background-image: url("http://i.imgur.com/qozv4.png");
+      background-repeat: repeat;
+      font-family: 'Raleway', sans-serif;
+      }
+      
+      div{
+      margin:0 auto;
+      margin-top:25px;
+      background-color:#ddaa33;
+      padding-left:25px;
+      padding-right:25px;
+      border-style: solid;
+      padding-top:15px;
+      width:500px;
+      color:#000;
+      border-radius: 25px;
+      padding: 20px; 
+      box-shadow: 0px 10px 35px #000;
+      }
+      
+      h1{
+      width:90%;
+      margin-right:auto;
+      margin-left:auto;
+      }
+      
+      form{
+      width:70%;
+      margin-right:auto;
+      margin-left:auto;
+      }
+      
+      input{
+      float:right;
+      margin-right:30px;
+      }
+   </style>
+</head>
+
+<body>
+   <div>
+      <h1>Body Mass Index Calculator</h1>
+      <script>
+         var height_in_feet = form.inputbox.value;
+         var height_in_inches ; // user's height in inches
+         var total_height_in_inches; //The user's total height stored in var
+         var weight_in_pounds; //The user's weight stored in var
+      </script>
+      
+      <form id="frm1" action="form_action.asp">Height in Inches: <input type="text" name="total_height_in_inches"><br>
+      <br> Weight: <input type="text" name="weight_in_pounds"><br><br>
+      <input type="button" onclick="myFunction()" value="Submit">
+      </form>
+
+      <br>
+
+ 
+   </div>
+</body>
+
+</html>
