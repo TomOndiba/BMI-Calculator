@@ -1,20 +1,27 @@
 3<html>
 
 <head>
+ <meta charset="UTF-8"> 
    <title>BMI Calculator</title>
+   <script>
+window.onload = function() {
+  // run your script in here
+}
 
    <script>
 
-      var BMI, total_height_in_inches, height_in_feet; //First var container
+      var BMI;
+      var total_height_in_inches=5;
+      var height_in_feet =4; //First var container
+      var total_height_in_inches;
+      var height_in_inches=3;
+      var weight_in_pounds = 180;
 
       total_height_in_inches = (height_in_feet * 12) + height_in_inches;//Height calc
 
       BMI = (weight_in_pounds / Math.pow(total_height_in_inches, 2)) * 703;//Equation
 
       var result = Math.round(BMI);//Calculated result
-
-      //document.write("Your BMI is " + result);
-      document.write("<br><br>");
 
       if (result <= 18.5) { document.write("You are underweight.");}
 
@@ -25,7 +32,7 @@
       else if (result  == 25.0 || BMI <= 29.9) { document.write("You are overweight.");}
 
       // If BMI is 30 or above user is obese
-      else if (result  >= 30) { document.write("You are obese.");}
+      else if (result  >= 30) { document.getElementById('log').innerHTML="WHATEVER YOU WANT...";}
 
    </script>
 
@@ -70,14 +77,17 @@
       float:right;
       margin-right:30px;
       }
+
    </style>
 </head>
 
+</script>
 <body>
    <div>
       <h1>Body Mass Index Calculator</h1>
       <script>
-         var height_in_feet = form.inputbox.value;
+         var height_in_feet;
+        
          var height_in_inches ; // user's height in inches
          var total_height_in_inches; //The user's total height stored in var
          var weight_in_pounds; //The user's weight stored in var
@@ -91,6 +101,11 @@
       <br>
 
  
+   </div>
+   <br>
+   <div id="log">
+      
+
    </div>
 </body>
 
