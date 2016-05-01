@@ -1,112 +1,161 @@
-3<html>
-
+<!DOCTYPE html>
+<html>
 <head>
- <meta charset="UTF-8"> 
-   <title>BMI Calculator</title>
-   <script>
-window.onload = function() {
-  // run your script in here
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href="jsstyle1.css" rel="stylesheet" type="text/css" id="cssLink" />
+
+  <script type="text/javascript">
+function swapStyleSheet1()
+{
+ //Local Variables
+ var changeCSS; //Object reference to CSS link tag
+ //Get access to style sheet link
+ changeCSS = document.getElementById("cssLink");
+ //Assign a new style sheet
+ changeCSS.href = "jsstyle1.css"; 
+}function swapStyleSheet2()
+{
+ //Local Variables
+ var changeCSS; //Object reference to CSS link tag
+ //Get access to style sheet link
+ changeCSS = document.getElementById("cssLink");
+ //Assign a new style sheet
+ changeCSS.href = "jsstyle2.css"; 
 }
 
-   <script>
+</script>
 
-      var BMI;
-      var total_height_in_inches=5;
-      var height_in_feet =4; //First var container
-      var total_height_in_inches;
-      var height_in_inches=3;
-      var weight_in_pounds = 180;
+	<script>
 
-      total_height_in_inches = (height_in_feet * 12) + height_in_inches;//Height calc
+	function substitute() {
+  var height = document.getElementById('height').value;
+  var weight = document.getElementById('weight').value;
 
-      BMI = (weight_in_pounds / Math.pow(total_height_in_inches, 2)) * 703;//Equation
+  var bmi = (weight / Math.pow(height, 2)) * 703;
 
-      var result = Math.round(BMI);//Calculated result
+  var result = bmi.toFixed(1)
 
-      if (result <= 18.5) { document.write("You are underweight.");}
+  document.getElementById("title").innerHTML = "Your BMI is " + result;
 
-      // If BMI is 18.5-24.9 user is normal weight
-      else if (result  == 18.5 || BMI <= 24.9) { document.write("You are a normal weight.");}
+  if (result <= 18.5) {
+    document.getElementById("descript").innerHTML = "You're underweight. You can find more about healthy eating at: http://www.cdc.gov";
+  }
 
-      // If BMI is 25.0-29.9 user is overweight
-      else if (result  == 25.0 || BMI <= 29.9) { document.write("You are overweight.");}
+  // If BMI is 18.5-24.9 user is normal weight
+  else if (result == 18.5 || result <= 24.9) {
+    document.getElementById("descript").innerHTML = "You're normal weight. While your weight might not be over or under the suggested BMI normals, it's important to realize there is more to health than body weight. You should still be active in fitness regardless.";
+  }
 
-      // If BMI is 30 or above user is obese
-      else if (result  >= 30) { document.getElementById('log').innerHTML="WHATEVER YOU WANT...";}
+  // If BMI is 25.0-29.9 user is overweight
+  else if (result == 25.0 || result <= 29.9) {
+    document.getElementById("descript").innerHTML = "You're overweight. You need to lose some weight to be considered healthy by the BMI scale. This can be done by living an active healthy lifestyle.";
+  }
 
-   </script>
+  // If BMI is 30 or above user is obese
+  else if (result >= 30) {
+    document.getElementById("descript").innerHTML = "You're obese. You should seek help from your primary care physician. Being obese can have serious negative effects on health.";
+  }
 
-   <style>
-      @import url(https://fonts.googleapis.com/css?family=Raleway:400,600);
+}
+	</script>
 
-      html{
-      background-color:#8fa5c2;
-      background-image: url("http://i.imgur.com/qozv4.png");
-      background-repeat: repeat;
-      font-family: 'Raleway', sans-serif;
-      }
-      
-      div{
-      margin:0 auto;
-      margin-top:25px;
-      background-color:#ddaa33;
-      padding-left:25px;
-      padding-right:25px;
-      border-style: solid;
-      padding-top:15px;
-      width:500px;
-      color:#000;
-      border-radius: 25px;
-      padding: 20px; 
-      box-shadow: 0px 10px 35px #000;
-      }
-      
-      h1{
-      width:90%;
-      margin-right:auto;
-      margin-left:auto;
-      }
-      
-      form{
-      width:70%;
-      margin-right:auto;
-      margin-left:auto;
-      }
-      
-      input{
-      float:right;
-      margin-right:30px;
-      }
-
-   </style>
 </head>
 
-</script>
-<body>
-   <div>
-      <h1>Body Mass Index Calculator</h1>
-      <script>
-         var height_in_feet;
-        
-         var height_in_inches ; // user's height in inches
-         var total_height_in_inches; //The user's total height stored in var
-         var weight_in_pounds; //The user's weight stored in var
-      </script>
-      
-      <form id="frm1" action="form_action.asp">Height in Inches: <input type="text" name="total_height_in_inches"><br>
-      <br> Weight: <input type="text" name="weight_in_pounds"><br><br>
-      <input type="button" onclick="myFunction()" value="Submit">
-      </form>
+	<body>
 
-      <br>
+  <div class="wrapper">
+    <div class="contents">
+      <div id="titleBar">
 
- 
-   </div>
-   <br>
-   <div id="log">
-      
+        <h5>BMI Calculator</h5>
+      </div>
+      <p class="toolTips">Please enter your height and weight below to calculator your BMI.
+      </p>
+      <div class="inputs">
 
-   </div>
+        <ul>
+          <li><div class="icon1"><img src="images/weightIcon.jpg" /></div>
+            <div id="height2"><p id="labels">Height: </p>
+
+            <select id="height">
+				  <option value="61">5 foot 1 inch</option>
+				  <option value="62">5 foot 2 inch</option>
+				  <option value="63">5 foot 3 inch</option>
+				  <option value="64">5 foot 4 inch</option>
+				  <option value="65">5 foot 5 inch</option>
+				  <option value="66">5 foot 6 inch</option>
+				  <option value="67">5 foot 7 inch</option>
+				  <option selected value="68" >5 foot 8 inch</option>
+				  <option value="69">5 foot 9 inch</option>
+				  <option value="70">5 foot 10 inch</option>
+				  <option value="71">5 foot 11 inch</option>
+				  <option value="72">6 foot 0 inch</option>
+				  <option value="73">6 foot 1 inch</option>
+				  <option value="74">6 foot 2 inch</option>
+				  <option value="75">6 foot 3 inch</option>
+				  <option value="76">6 foot 4 inch</option>
+				  <option value="77">6 foot 5 inch</option>
+				  <option value="78">6 foot 6 inch</option>
+				  <option value="79">6 foot 7 inch</option>
+				  <option value="80">6 foot 8 inch</option>
+				  <option value="81">6 foot 9 inch</option>
+				  <option value="82">6 foot 10 inch</option>
+				  <option value="83">6 foot 11 inch</option>
+				</select></div>
+          </li>
+<hr class="listHr">
+          <div class="icon2"><img src="images/weightIcon2.jpg" /></div>
+          
+          <li>
+
+            <p id="labels">Weight: </p><input type="number" pattern="\d*" id="weight" onkeydown="if (event.keyCode == 13) { substitute(); toggle_div_fun('result'); }" /><br><br>
+
+
+          </li>
+        </ul>
+      </div>
+
+      <div class="buttonWrapper" id="result2" onclick="substitute(); toggle_div_fun('result');">
+
+        <h2 class="buttonText">Submit</h2>
+      </div>
+
+
+
+    <div class="toggleWrapper"><div id="buttonWrap">
+      <input type="checkbox" onclick="swapStyleSheet2();" name="toggle" id="toggle">
+      <label for="toggle"></label></div><p id="toggleP">Nokia Theme</p>
+    </div>
+
+
+      <!--<div id="buttons"><input type="button" id="swap1" value="Change to Style Sheet 1" onclick="swapStyleSheet1();"/>
+<input type="button" id="swap2" value="Change to Style Sheet 2" onclick="swapStyleSheet2();"/>-->
+
+      <div class="result" id="result">
+        <h2 id="title" style="text-align:center"></h2>
+        <p id="descript" style="text-indent: 50px;"></p>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    function submitForm()
+     {
+          document.getElementById('#result2').submit();
+     }
+  </script>
+  <script>
+    function toggle_div_fun(id) {       
+    	var divelement = document.getElementById(id);       
+    	if(divelement.style.display == 'block')          
+    		divelement.style.display = 'none';       
+    	else          
+    		divelement.style.display = 'block';    }
+  </script>
 </body>
 
 </html>

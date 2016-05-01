@@ -1,0 +1,188 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(fonts/nokiafc22.ttf);
+}
+
+html {
+  background: #efeff4;
+  background-position: 198px 75px;
+  font-family: myFirstFont;
+}
+
+#body {
+  padding-top: 10px;
+  width: 100%;
+  height: 99%;
+}
+
+.contents {
+  background-image:url('images/nokia.jpg');
+  background-size: 100% 100%;
+  width: 375px;
+  height: 539px;
+  position: absolute;
+  left: 44%;
+  top: 52%;
+  margin: -290px 0 0 -165px;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+#titleBar {
+  margin-top: 0px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #000;
+  height: 10%;
+  display: inline-block;
+  width: 100%;
+}
+
+#labels {
+  display: inline-block;
+  width: 60px;
+}
+
+.link {
+  top: 3px;
+}
+
+.wrapper {
+  margin-top: 0px;
+}
+
+#button {}
+
+ul {
+  width: 100%;
+  float: left;
+  line-height: 1em;
+  list-style-type: none;
+  height: 30%;
+  margin-top: 0;
+}
+
+.inputs {
+  margin-top: 15px;
+  margin-left:20px;
+  min-height: 105px;
+}
+
+.result {
+  padding: 0 10px;
+  margin-top: 10px;
+  display: none;
+}
+
+.toolTips {
+  color: #000;
+  font-size: 12px;
+  padding: 0 55px;
+}
+
+.buttonWrapper {
+  text-align: center;
+  margin-top: 10px;
+  line-height: .2em;
+  height: 40px;
+  color: ##007aff;
+  cursor: pointer;
+}
+
+#result2 {
+  color: #000;
+}
+
+.submit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#weight {
+  width: 24%;
+  margin-left: 4px;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+h4 {
+  padding-top: 0;
+  margin-top: 0;
+  display: inline;
+}
+
+@media screen and (max-width: 679px) and (min-width: 0px) body {
+  background: none;
+
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.listHr {
+  margin-left: 0px;
+  width: 0%;
+  overflow: hidden;
+}
+.buttonText {
+  color: #000;
+  -webkit-text-fill-color: #000;
+}
+div.linkBack a:link {
+  color: #007aff;
+  text-decoration: none;
+}
+div.linkBack a:visited {
+  color: #007aff;
+  text-decoration: none;
+}
+div.linkBack a:hover {
+  color: #007aff;
+  text-decoration: none;
+}
+div.linkBack a:active {
+  color: #007aff;
+  text-decoration: none;
+}
+.linkBack {
+  float: left;
+  color: #007aff;
+  text-decoration: none;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+.indent {
+  text-indent: 50px;
+}
+.icon1{
+  display:none;
+}
+.icon2{
+ display:none;
+}
+
+.toggleWrapper{
+ display:none;
+}
+
+#descript{
+  padding:0 20px;
+}
+
+textarea:focus, input:focus{
+    border: 0
+    outline: none;
+    -webkit-appearance: none
+}
