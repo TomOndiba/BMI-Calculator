@@ -7,27 +7,33 @@
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link href="jsstyle1.css" rel="stylesheet" type="text/css" id="cssLink" />
 
+/* ---JS FUNCTION to Swap Styles---
+Author: Steven Leabo 
+---------------------------------*/
 <script type="text/javascript">
-function swapStyleSheet1()
-{
- //Local Variables
- var changeCSS; //Object reference to CSS link tag
- //Get access to style sheet link
- changeCSS = document.getElementById("cssLink");
- //Assign a new style sheet
- changeCSS.href = "jsstyle1.css"; 
-}function swapStyleSheet2()
-{
- //Local Variables
- var changeCSS; //Object reference to CSS link tag
- //Get access to style sheet link
- changeCSS = document.getElementById("cssLink");
- //Assign a new style sheet
- changeCSS.href = "jsstyle2.css"; 
-}
+    function swapStyleSheet1()
+    {
+     //Local Variables
+     var changeCSS; //Object reference to CSS link tag
+     //Get access to style sheet link
+     changeCSS = document.getElementById("cssLink");
+     //Assign a new style sheet
+     changeCSS.href = "jsstyle1.css"; 
+    }function swapStyleSheet2()
+    {
+     //Local Variables
+     var changeCSS; //Object reference to CSS link tag
+     //Get access to style sheet link
+     changeCSS = document.getElementById("cssLink");
+     //Assign a new style sheet
+     changeCSS.href = "jsstyle2.css"; 
+    }
 </script>
 
-	<script>
+/* ---JS FUNCTION to calculate BMI---
+Author: Steven Leabo 
+-----------------------------------*/
+<script>
 
 	function substitute() {
   var height = document.getElementById('height').value;
@@ -35,31 +41,31 @@ function swapStyleSheet1()
 
   var bmi = (weight / Math.pow(height, 2)) * 703;
 
-  var result = bmi.toFixed(1)
+  var result = bmi.toFixed(1);
 
   document.getElementById("title").innerHTML = "Your BMI is " + result;
 
-  if (result <= 18.5) {
-    document.getElementById("descript").innerHTML = "You're underweight. You can find more about healthy eating at: http://www.cdc.gov";
-  }
+      if (result <= 18.5) {
+        document.getElementById("descript").innerHTML = "You're underweight. You can find more about healthy eating at: http://www.cdc.gov";
+      }
 
-  // If BMI is 18.5-24.9 user is normal weight
-  else if (result == 18.5 || result <= 24.9) {
-    document.getElementById("descript").innerHTML = "You're normal weight. While your weight might not be over or under the suggested BMI normals, it's important to realize there is more to health than body weight. You should still be active in fitness regardless.";
-  }
+        // If BMI is 18.5-24.9 user is normal weight
+        else if (result == 18.5 || result <= 24.9) {
+        document.getElementById("descript").innerHTML = "You're normal weight. While your weight might not be over or under the suggested BMI normals, it's important to realize there is more to health than body weight. You should still be active in fitness regardless.";
+      }
 
-  // If BMI is 25.0-29.9 user is overweight
-  else if (result == 25.0 || result <= 29.9) {
-    document.getElementById("descript").innerHTML = "You're overweight. You need to lose some weight to be considered healthy by the BMI scale. This can be done by living an active healthy lifestyle.";
-  }
+        // If BMI is 25.0-29.9 user is overweight
+        else if (result == 25.0 || result <= 29.9) {
+        document.getElementById("descript").innerHTML = "You're overweight. You need to lose some weight to be considered healthy by the BMI scale. This can be done by living an active healthy lifestyle.";
+      }
 
-  // If BMI is 30 or above user is obese
-  else if (result >= 30) {
-    document.getElementById("descript").innerHTML = "You're obese. You should seek help from your primary care physician. Being obese can have serious negative effects on health.";
-  }
+        // If BMI is 30 or above user is obese
+        else if (result >= 30) {
+        document.getElementById("descript").innerHTML = "You're obese. You should seek help from your primary care physician. Being obese can have serious negative effects on health.";
+      }
 
-}
-	</script>
+  }
+</script>
 
 </head>
 
@@ -71,15 +77,13 @@ function swapStyleSheet1()
 
         <h5>BMI Calculator</h5>
       </div>
-      <p class="toolTips">Please enter your height and weight below to calculator your BMI.
-      </p>
+      <p class="toolTips">Please enter your height and weight below to calculator your BMI.</p>
       <div class="inputs">
-
         <ul>
           <li><div class="icon1"><img src="images/weightIcon.jpg" /></div>
             <div id="height2"><p id="labels">Height: </p>
 
-            <select id="height">
+        <select id="height">
 				  <option value="61">5 foot 1 inch</option>
 				  <option value="62">5 foot 2 inch</option>
 				  <option value="63">5 foot 3 inch</option>
@@ -105,7 +109,7 @@ function swapStyleSheet1()
 				  <option value="83">6 foot 11 inch</option>
 				</select></div>
           </li>
-<hr class="listHr">
+            <hr class="listHr">
           <div class="icon2"><img src="images/weightIcon2.jpg" /></div>
           
           <li>
@@ -130,8 +134,8 @@ function swapStyleSheet1()
     </div>
 
 
-      <!--<div id="buttons"><input type="button" id="swap1" value="Change to Style Sheet 1" onclick="swapStyleSheet1();"/>
-<input type="button" id="swap2" value="Change to Style Sheet 2" onclick="swapStyleSheet2();"/>-->
+      <!--Placeholder button to swap stylesheet back ---<div id="buttons"><input type="button" id="swap1" value="Change to Style Sheet 1" onclick="swapStyleSheet1();"/>
+      <input type="button" id="swap2" value="Change to Style Sheet 2" onclick="swapStyleSheet2();"/>-->
 
       <div class="result" id="result">
         <h2 id="title" style="text-align:center"></h2>
@@ -140,13 +144,9 @@ function swapStyleSheet1()
     </div>
   </div>
 
-
-  <script>
-    function submitForm()
-     {
-          document.getElementById('#result2').submit();
-     }
-  </script>
+  /* ---JS FUNCTION to show Div on Click---
+  Author: Steven Leabo 
+  ---------------------------------------*/
   <script>
     function toggle_div_fun(id) {       
     	var divelement = document.getElementById(id);       
